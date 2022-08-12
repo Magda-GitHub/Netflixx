@@ -1,0 +1,79 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    padding: 12px 4%;
+    font-size: 1rem;
+    color: white;
+    // background: linear-gradient(to bottom, );
+    a{
+        color: white;
+        text-decoration: none; 
+    }
+    &-black{
+        background-color: black;
+    }
+    &_burger {
+        cursor:pointer;
+        color:white;
+        margin-right: 1rem;
+        @media screen and (min-width: 768px) {
+            display:none;
+        }
+    }
+    &_logo {
+        max-width: 100px;
+    }
+    &_links {
+        margin-left: 20px;
+        transition: background-color .4s ease-in-out;
+       
+        .nav_link{
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        @media screen and (max-width: 767px) {
+            margin-left: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 110%;
+            right: 0;
+            .show & {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: calc(100vh - 60px);
+                top: 60px;
+                visibility: visible;
+                background-color: black;
+            }
+
+            .nav_link {
+                padding: 15px 4%;
+                font-size: 1.5 rem;
+            }
+        }
+    }
+    &_rights {
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+        .nav_right {
+            margin-left: 10px;
+            @media screen and (min-width: 768px) {
+                margin-left: 20px;
+            }
+        }
+    }
+    .nav_rights .nav_right .avatar{
+        border-radius: 5px;
+        height: 30px;
+        width: 30px;
+
+    }
+}
