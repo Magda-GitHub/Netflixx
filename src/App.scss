@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:rgb(99, 57, 57);
+  background-color:black;
 }
 
 *, ::before, ::after {
@@ -15,12 +15,19 @@ body {
   padding: 0;
   outline: none;
 }
+
+h1,p{
+  margin-bottom: 1rem;
+  @media screen and (min-width:768px){
+    margin-bottom: 1.6rem;
+  }
+}
 button{
   background-color: none;
   border: none;
 }
 
-.test{
+.net{
   width: 100%;
   height: 50vh;
 }

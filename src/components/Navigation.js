@@ -1,5 +1,5 @@
 import React from "react";
-import { useState} from "react";
+import { useState } from "react";
 import "../components/Navigation.scss";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,6 @@ import {faCircleInfo} from '@fortawesome/free-solid-svg-icons';
 import {faCaretDown} from '@fortawesome/free-solid-svg-icons';
 
 export default function Navigation() {
-
 
 const [navigationBlack, setNavigationBlack] = useState(false);
 const [toggleMenu, setToggleMenu] = useState(false);
@@ -22,6 +21,7 @@ useState(() => {
   document.addEventListener("scroll", transitionNav);
 });
 
+console.log(navigationBlack);
 
 const handleClick = () => {
   console.log(toggleMenu);
@@ -63,8 +63,8 @@ const handleClick = () => {
             </a>
             <a href="/" className="nav_right">
             <img src="../images/avatar1.png" className="avatar" alt="avatar"/>
-            <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
             </a>
+            <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
             <a href="/" className="nav_right">
             <FontAwesomeIcon icon={faCircleInfo}></FontAwesomeIcon>
             </a>

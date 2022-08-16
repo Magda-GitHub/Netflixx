@@ -1,0 +1,25 @@
+.footer {
+    color: gray;
+    padding: 2rem 1rem;
+    font-size:0.9rem;
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &_links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        .footer_links{
+            flex: 1 0 26%;
+            margin-bottom: 1rem;
+            @media screen and (min-width: 768px){
+                flex: 1 0 20%;
+            }
+        }
+    }
+    // &_date {
+
+    // }
+}
