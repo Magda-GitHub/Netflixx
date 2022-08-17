@@ -1,0 +1,25 @@
+.tiles {
+        padding: 2rem 5%;
+        color: white;
+    
+
+    &_descript {
+        font-size: 1.6rem;
+    }
+    &_images {
+        display: flex;
+        aline-items: center;
+        overflow-x: visible;
+        overflow-y: hidden;
+        width: 100%;
+        padding: .6rem 0;
+        .tiles_images {
+            width: 310px;
+            padding: 0.2rem;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
+    }
+}

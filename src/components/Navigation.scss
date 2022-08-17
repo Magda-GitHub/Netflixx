@@ -5,10 +5,11 @@
     flex-wrap: wrap;
     position: fixed;
     width: 100%;
-    padding: 8px 3%;
+    padding: 10px 3%;
     font-size: 0.8rem;
     color: white;
-    letter-spacing:0.05rem;
+    letter-spacing:0.06rem;
+    z-index: 1;
     // background-color: black;
     background: linear-gradient(to top, transparent 0%, rgb(0,0,0,0.3), 50%);
     a{
@@ -21,7 +22,7 @@
     &_burger {
         cursor:pointer;
         color:white;
-        margin-right: 1rem;
+        margin-right: 0.9rem;
         @media screen and (min-width: 768px) {
             display:none;
         }
@@ -38,7 +39,7 @@
             padding: 5px 10px;
         }
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
             margin-left: 0;
             visibility: hidden;
             position: absolute;
