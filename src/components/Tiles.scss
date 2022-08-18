@@ -8,7 +8,7 @@
     }
     &_images {
         display: flex;
-        aline-items: center;
+        align-items: center;
         overflow-x: visible;
         overflow-y: hidden;
         width: 100%;
@@ -16,10 +16,24 @@
         .tiles_images {
             width: 310px;
             padding: 0.2rem;
+            transition: transform 0.4s ease-in;
             &:hover {
                 cursor: pointer;
-                transform: scale(1.2);
+                transform: scale(0.9);
             }
         }
+    }
+
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        background-color: black;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-clip: padding-box;
+        background-color: black;
+        border: 10px;
+        border: 2px solid transparent;
+        box-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
     }
 }

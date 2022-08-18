@@ -10,10 +10,10 @@ function App() {
   return <div className="App">
     <Navigation />
     <Hero />
-    <Tiles title="Continue to watch" fetchUrl={requests.fetchNetflixOriginals} />
+    <Tiles title="Continue to watch" fetchUrl={requests.fetchActionMovies} />
     <Tiles title="Popular on Netflix" fetchUrl={requests.fetchTopRated} />
     <Tiles title="Comedy Movies" fetchUrl={requests.fetchComedyMovies}/>
-      <div className="net"></div>
+     
       
     <Footer />
   </div>
