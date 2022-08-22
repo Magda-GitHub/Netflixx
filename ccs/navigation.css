@@ -12,7 +12,96 @@
       flex-wrap: wrap;
   position: fixed;
   width: 100%;
-  padding: 12px 4%;
-  font-size: 1rem;
+  padding: 10px 3%;
+  font-size: 0.8rem;
   color: white;
-}/*# sourceMappingURL=navigation.css.map */
+  letter-spacing: 0.06rem;
+  z-index: 1;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(rgba(0, 0, 0, 0.3)), to(50%));
+  background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3), 50%);
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+.nav-black {
+  background-color: black;
+}
+.nav_burger {
+  cursor: pointer;
+  color: white;
+  margin-right: 0.9rem;
+}
+@media screen and (min-width: 768px) {
+  .nav_burger {
+    display: none;
+  }
+}
+.nav_logo {
+  max-width: 100px;
+}
+.nav_links {
+  margin-left: 20px;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+.nav_links .nav_link {
+  text-decoration: none;
+  padding: 5px 10px;
+}
+@media screen and (max-width: 768px) {
+  .nav_links {
+    margin-left: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 110%;
+    right: 0;
+  }
+  .show .nav_links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 60px);
+    top: 60px;
+    visibility: visible;
+    background-color: black;
+  }
+  .nav_links .nav_link {
+    padding: 15px 4%;
+    font-size: 1.5 rem;
+  }
+}
+.nav_rights {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.nav_rights .nav_right {
+  margin-left: 10px;
+}
+@media screen and (min-width: 768px) {
+  .nav_rights .nav_right {
+    margin-left: 20px;
+  }
+}
+.nav .nav_rights .nav_right .avatar {
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=Navigation.css.map */

@@ -1,0 +1,80 @@
+.main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 51vh;
+  font-size: 0.7rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  background-color: rgb(74, 74, 74);
+}
+@media screen and (min-width: 768px) {
+  .main {
+    font-size: 1.3rem;
+    height: 85vh;
+    padding-bottom: 2rem;
+  }
+}
+.main_content {
+  padding: 10vh 4% 0 4%;
+  width: 85vh;
+}
+.main_content .main_title {
+  font-size: 1.5rem;
+}
+.main_content .main_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.main_content .main_buttons .main_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: inherit;
+  font-weight: 600;
+  padding: 10px 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 0.9rem;
+  background-color: rgba(186, 186, 186, 0.8);
+  border-radius: 6px;
+}
+@media screen and (min-width: 768px) {
+  .main_content .main_buttons .main_button {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.9rem;
+    cursor: pointer;
+  }
+}
+.main_content .main_buttons .main_button_play {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+.main_content .main_buttons .main_button svg {
+  margin-right: 0.7rem;
+}
+.main::after {
+  content: "";
+  display: block;
+  height: 3rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(31, 31, 31, 0)), color-stop(rgba(31, 31, 31, 0.5)), to(#111));
+  background: linear-gradient(180deg, rgba(31, 31, 31, 0), rgba(31, 31, 31, 0.5), #111);
+}
+@media screen and (min-width: 768px) {
+  .main::after {
+    height: 8rem;
+  }
+}/*# sourceMappingURL=Hero.css.map */

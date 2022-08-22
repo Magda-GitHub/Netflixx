@@ -1,9 +1,9 @@
 import React from 'react';
 import "../components/Tiles.scss";
 import { useState, useEffect } from "react";
-// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-// import {faChevronLeft} from '@fortawesome/free-solid-svg-icons';
-// import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faChevronLeft} from '@fortawesome/free-solid-svg-icons';
+import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
 
@@ -24,7 +24,8 @@ function Tiles({title, fetchUrl}) {
   return (
   <div className="tiles">
       <h2 className="tiles_descript">{title}</h2>
-      {/* <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon> */}
+      <div className="wrapper">
+      <FontAwesomeIcon icon={faChevronLeft} className="sliderChevron left"></FontAwesomeIcon>
         <div className="tiles_images">
             {movies.map((movie) => (
             <div key={movie.id}>
@@ -35,7 +36,8 @@ function Tiles({title, fetchUrl}) {
       
       ))}
      </div>
-     {/* <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon> */}
+     <FontAwesomeIcon icon={faChevronRight} className ="sliderChevron right"></FontAwesomeIcon>
+    </div>
     </div>
   );
 }
