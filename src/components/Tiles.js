@@ -1,6 +1,6 @@
 import React from 'react';
 import "../components/Tiles.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronLeft} from '@fortawesome/free-solid-svg-icons';
 import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
@@ -14,19 +14,43 @@ function Tiles({title, fetchUrl}) {
     useEffect(() => {
         async function fetchData(){
           const request = await axios.get(fetchUrl);
-        
-        setMovies( request.data.results);
+            setMovies( request.data.results);
+
+       
       }
       fetchData ();
       }, 
-      );
+      [fetchUrl]);
+
+      console.log(movies);
+
+
+
+    const [slidesNumber, setSlidesNumber] = useState(0)
+
+    const listRef = useRef(null) 
+
+    const handleClick = (direction) => {
+      
+      let distance = listRef.current.getBoundingClientRect().x - 30;
+      if(direction === "left" && slidesNumber > 0){
+        setSlidesNumber(slidesNumber - 1);
+        listRef.current.style.transform = `translateX(${329 + distance}px)`;
+      }
+
+      if(direction === "right"&& slidesNumber < 4){
+        setSlidesNumber(slidesNumber + 1);
+        listRef.current.style.transform = `translateX(${-329 + distance}px)`
+      }
+
+    };
 
   return (
   <div className="tiles">
       <h2 className="tiles_descript">{title}</h2>
       <div className="wrapper">
-      <FontAwesomeIcon icon={faChevronLeft} className="sliderChevron left"></FontAwesomeIcon>
-        <div className="tiles_images">
+      <FontAwesomeIcon icon={faChevronLeft} className="sliderChevron left" onClick={() => handleClick("left")} />
+        <div className="tiles_images" ref={listRef}>
             {movies.map((movie) => (
             <div key={movie.id}>
             
@@ -36,7 +60,7 @@ function Tiles({title, fetchUrl}) {
       
       ))}
      </div>
-     <FontAwesomeIcon icon={faChevronRight} className ="sliderChevron right"></FontAwesomeIcon>
+     <FontAwesomeIcon icon={faChevronRight} className ="sliderChevron right" onClick={() => handleClick("right")}></FontAwesomeIcon>
     </div>
     </div>
   );

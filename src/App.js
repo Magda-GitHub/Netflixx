@@ -6,17 +6,20 @@ import Tiles from "./components/Tiles"
 import Footer from "./components/Footer"
 import requests from "./config/Requests";
 
+
 function App() {
-  return <div className="App">
+  return(
+
+   <div className="App">
     <Navigation />
     <Hero />
-    <Tiles title="Continue to watch" fetchUrl={requests.fetchActionMovies} />
-    <Tiles title="Popular on Netflix" fetchUrl={requests.fetchTopRated} />
-    <Tiles title="Comedy Movies" fetchUrl={requests.fetchComedyMovies}/>
+    <Tiles title="Continue to watch" fetchUrl={requests.fetchTopRated} />
+    <Tiles title="Popular on Netflix" fetchUrl={requests.fetchRomanceMovies}/>
      
       
     <Footer />
   </div>
+  );
 }
 
 export default App;

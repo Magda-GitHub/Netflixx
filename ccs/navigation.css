@@ -16,7 +16,7 @@
   font-size: 0.8rem;
   color: white;
   letter-spacing: 0.06rem;
-  z-index: 1;
+  z-index: 3;
   background: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(rgba(0, 0, 0, 0.3)), to(50%));
   background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3), 50%);
 }
@@ -104,4 +104,4 @@
   width: 30px;
   -o-object-fit: cover;
      object-fit: cover;
-}/*# sourceMappingURL=Navigation.css.map */
+}/*# sourceMappingURL=navigation.css.map */

@@ -12,25 +12,26 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow-x: visible;
+  overflow-x: scroll;
   overflow-y: hidden;
   width: 100%;
   padding: 0.6rem 0;
 }
 .tiles_images .tiles_images {
   width: 310px;
-  padding: 0.2rem;
-  -webkit-transition: -webkit-transform 0.4s ease-in;
-  transition: -webkit-transform 0.4s ease-in;
-  transition: transform 0.4s ease-in;
-  transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
+  padding: 0.3rem;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 .tiles_images .tiles_images:hover {
   cursor: pointer;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
 }
 .tiles ::-webkit-scrollbar {
+  display: none;
   -webkit-appearance: none;
   background-color: black;
 }
@@ -44,9 +45,9 @@
   position: relative;
 }
 .wrapper .sliderChevron, .wrapper .sliderChevron {
-  width: 50px;
+  width: 30px;
   height: 100%;
-  background-color: rgba(22, 22, 22, 0.5);
+  background-color: rgba(34, 26, 26, 0.6);
   color: white;
   position: absolute;
   z-index: 1;
@@ -54,6 +55,7 @@
   bottom: 0;
   margin: auto;
   cursor: pointer;
+  padding: 10px;
 }
 .wrapper .sliderChevron.left, .wrapper .sliderChevron.left {
   left: 0;
@@ -61,15 +63,12 @@
 .wrapper .sliderChevron.right, .wrapper .sliderChevron.right {
   right: 0;
 }
-.wrapper .container {
-  margin-left: 50px;
+.wrapper .tiles_images {
+  margin-left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 10px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  margin-top: 6px;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
   -webkit-transition: all 1s ease;

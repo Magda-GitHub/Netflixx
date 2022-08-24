@@ -9,22 +9,23 @@
     &_images {
         display: flex;
         align-items: center;
-        overflow-x: visible;
+        overflow-x: scroll;
         overflow-y: hidden;
         width: 100%;
         padding: .6rem 0;
         .tiles_images {
             width: 310px;
-            padding: 0.2rem;
-            transition: transform 0.4s ease-in;
+            padding: 0.3rem;
+            transition: transform 0.2s ease-in;
             &:hover {
                 cursor: pointer;
-                transform: scale(0.9);
+                transform: scale(1.06);
             }
         }
     }
 
     ::-webkit-scrollbar {
+        display:none;
         -webkit-appearance: none;
         background-color: black;
     }
@@ -40,9 +41,9 @@
     position: relative;
 
     .sliderChevron, .sliderChevron {
-      width: 50px;
+      width: 30px;
       height: 100%;
-      background-color: rgb(22, 22, 22, 0.5);
+      background-color: rgba(34, 26, 26, 0.6);
       color: white;
       position: absolute;
       z-index: 1;
@@ -50,6 +51,7 @@
       bottom: 0;
       margin: auto;
       cursor: pointer;
+      padding: 10px;
 
       &.left {
         left: 0;
@@ -59,11 +61,10 @@
         right: 0;
       }
     }
-    .container {
-      margin-left: 50px;
+    .tiles_images {
+      margin-left: 0;
       display: flex;
-      margin-top: 10px;
-      width: max-content;
+      margin-top: 6px;
       transform: translateX(0px);
       transition: all 1s ease;
     }

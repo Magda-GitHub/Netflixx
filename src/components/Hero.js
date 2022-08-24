@@ -27,7 +27,7 @@ function Hero() {
   }, []);
 
 function createText(string, n) {
-  return string?.length > n ? string.substr(0) : "no description";
+  return string?.length > n ? string.substr(0, n-1) : "no description";
 }
 
 const mainStyle ={
@@ -43,7 +43,7 @@ const mainStyle ={
     <header className="main" style={mainStyle}>
         <div className="main_content">
             <h1 className="main_title">{movie?.title || movie?.name || movie.original_title}</h1>
-            <p className="main_description">{createText(movie?.overview, 150)}</p>
+            <p className="main_description">{createText(movie?.overview,150)}</p>
             <div className="main_buttons">
                 <button className="main_button main_button_play"><FontAwesomeIcon icon={faPlay}></FontAwesomeIcon> Play</button>
                 <button className="main_button"><FontAwesomeIcon icon={faCircleInfo}></FontAwesomeIcon> Info</button>
