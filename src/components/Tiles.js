@@ -7,14 +7,15 @@ import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
 
-function Tiles({title, fetchUrl}) {
-
+function Tiles({ title, fetchUrl }) {
+    const baseURL ="https://image.tmdb.org/t/p/original";
     const [movies, setMovies] = useState([]);
+     
 
     useEffect(() => {
         async function fetchData(){
           const request = await axios.get(fetchUrl);
-            setMovies( request.data.results);
+            setMovies(request.data.results);
 
        
       }
@@ -28,37 +29,41 @@ function Tiles({title, fetchUrl}) {
 
     const [slidesNumber, setSlidesNumber] = useState(0)
 
-    const listRef = useRef(null) 
+    const refContainer = useRef(false);
 
-    const handleClick = (direction) => {
+    const handleClick = (direction: string) => {
+
+      setSlidesNumber(true)
+
+      if (refContainer.current) {
+        const {scrollLeft, clientWidth } = refContainer.current
+        const scrollTo =
+        direction === "left" 
+        ? scrollLeft - clientWidth
+        : scrollLeft + clientWidth
+
+        refContainer.current.scrollTo({ left: scrollTo, behavior: "smooth"})
+
+      }
+    }
       
-      let distance = listRef.current.getBoundingClientRect().x - 30;
-      if(direction === "left" && slidesNumber > 0){
-        setSlidesNumber(slidesNumber - 1);
-        listRef.current.style.transform = `translateX(${329 + distance}px)`;
-      }
-
-      if(direction === "right"&& slidesNumber < 4){
-        setSlidesNumber(slidesNumber + 1);
-        listRef.current.style.transform = `translateX(${-329 + distance}px)`
-      }
-
-    };
 
   return (
   <div className="tiles">
       <h2 className="tiles_descript">{title}</h2>
       <div className="wrapper">
-      <FontAwesomeIcon icon={faChevronLeft} className="sliderChevron left" onClick={() => handleClick("left")} />
-        <div className="tiles_images" ref={listRef}>
+      <FontAwesomeIcon icon={faChevronLeft} className={`sliderChevron left ${!slidesNumber && "hidden"}`}
+       onClick={() => handleClick("left")} />
+        <div className="tiles_images" ref={refContainer}>
             {movies.map((movie) => (
             <div key={movie.id}>
             
-            <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} className="tiles_images" alt="{movie?.title || movie?.name || movie.original_title}" />
+            <img src={`${baseURL}/${movie.backdrop_path}`} className="tiles_image" alt="{movie?.title || movie?.name || movie.original_title}" />
             
       </div>
       
       ))}
+      
      </div>
      <FontAwesomeIcon icon={faChevronRight} className ="sliderChevron right" onClick={() => handleClick("right")}></FontAwesomeIcon>
     </div>

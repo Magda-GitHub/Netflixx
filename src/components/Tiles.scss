@@ -9,13 +9,14 @@
     &_images {
         display: flex;
         align-items: center;
+        justify-content: center;
         overflow-x: scroll;
         overflow-y: hidden;
         width: 100%;
-        padding: .6rem 0;
-        .tiles_images {
+        padding: .2rem 0;
+        .tiles_image {
             width: 310px;
-            padding: 0.3rem;
+            padding: 0 .2rem;
             transition: transform 0.2s ease-in;
             &:hover {
                 cursor: pointer;

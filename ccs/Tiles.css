@@ -12,20 +12,23 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow-x: scroll;
   overflow-y: hidden;
   width: 100%;
-  padding: 0.6rem 0;
+  padding: 0.2rem 0;
 }
-.tiles_images .tiles_images {
+.tiles_images .tiles_image {
   width: 310px;
-  padding: 0.3rem;
+  padding: 0 0.2rem;
   -webkit-transition: -webkit-transform 0.2s ease-in;
   transition: -webkit-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
   transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
-.tiles_images .tiles_images:hover {
+.tiles_images .tiles_image:hover {
   cursor: pointer;
   -webkit-transform: scale(1.06);
           transform: scale(1.06);
