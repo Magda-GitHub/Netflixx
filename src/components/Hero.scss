@@ -5,7 +5,7 @@
     color: white;
     justify-content: space-around;
     height: 51vh;
-    font-size: 0.7rem;
+    font-size: 0.3rem;
     padding-bottom: 2rem;
     width: 100%;
     background-color: rgb(74,74,74);
@@ -13,9 +13,9 @@
    
    
     @media screen and (min-width:768px){
-        font-size: 1.3rem;
+        font-size: 1rem;
         height: 85vh;
-        padding-bottom: 2rem;
+        padding-bottom: 4rem;
     }
     &_content {
         padding: 10vh 4% 0 4%;

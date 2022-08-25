@@ -56,9 +56,9 @@ function Tiles({ title, fetchUrl }) {
        onClick={() => handleClick("left")} />
         <div className="tiles_images" ref={refContainer}>
             {movies.map((movie) => (
-            <div key={movie.id}>
+            <div key={movie}>
             
-            <img src={`${baseURL}/${movie.backdrop_path}`} className="tiles_image" alt="{movie?.title || movie?.name || movie.original_title}" />
+            <img src={`${baseURL}${movie.backdrop_path}`} className="tiles_image" alt="{movie?.title || movie?.name || movie.original_title}" />
             
       </div>
       
