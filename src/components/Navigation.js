@@ -47,7 +47,7 @@ const handleClick = () => {
         <a href="/" className ="nav_link">
         New and Popular
         </a>
-        <a href="/" className ="nav_link">
+        <a href="/myList" className ="nav_link">
         My list
         </a>
         </nav>

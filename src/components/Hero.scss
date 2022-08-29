@@ -5,8 +5,8 @@
     color: white;
     justify-content: space-around;
     height: 51vh;
-    font-size: 0.3rem;
-    padding-bottom: 2rem;
+    font-size: 0.9rem;
+    padding-bottom: 2.5rem;
     width: 100%;
     background-color: rgb(74,74,74);
     z-index:2;
@@ -19,9 +19,12 @@
     }
     &_content {
         padding: 10vh 4% 0 4%;
-        width: 85vh;
+        width: 100%;
         .main_title {
             font-size: 1.5rem;
+        }
+        .main_description{
+            display:flex;
         }
         .main_buttons {
             display: flex;
@@ -49,6 +52,10 @@
             }
         }
     }
+
+   
+    
+
     &::after {
         content:"";
         display: block;
