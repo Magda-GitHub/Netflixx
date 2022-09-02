@@ -18,13 +18,17 @@
         padding-bottom: 4rem;
     }
     &_content {
-        padding: 10vh 4% 0 4%;
+        padding: 11vh 4% 0 4%;
         width: 100%;
+        
+
         .main_title {
             font-size: 1.5rem;
         }
         .main_description{
             display:flex;
+            flex-direction: column;
+            
         }
         .main_buttons {
             display: flex;

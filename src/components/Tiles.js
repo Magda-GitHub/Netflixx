@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+
 // import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import axios from 'axios';
 
@@ -12,11 +13,17 @@ function Tiles({ title, fetchUrl }) {
 	const baseURL = 'https://image.tmdb.org/t/p/original';
 	const [movies, setMovies] = useState([]);
 
+	// const [like, setLike] = useState(false);
+	// const [saved, setSaved] = useState(false);
+
 	useEffect(() => {
 		async function fetchData() {
 			const request = await axios.get(fetchUrl);
 			setMovies(request.data.results);
 		}
+
+		// window.localStorage.setItem("MY_FAVOURITE_MOVIE", JSON.stringify(fetchUrl))
+
 		fetchData();
 	}, [fetchUrl]);
 
@@ -27,7 +34,7 @@ function Tiles({ title, fetchUrl }) {
 	const refContainer = useRef(false);
 
 	const handleClick = movie => {
-		setSlidesNumber(true);
+		setSlidesNumber(1);
 
 		if (refContainer.current) {
 			const { scrollLeft, clientWidth } = refContainer.current;
@@ -37,6 +44,20 @@ function Tiles({ title, fetchUrl }) {
 			refContainer.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
 		}
 	};
+
+	//   const saveShow = async () => {
+
+	//       setLike(!like);
+	//       setSaved(true);
+	//       await ( {
+	//         savedShows: ({
+	//           id: movie.id,
+	//           title: movie.title,
+	//           img: movie.backdrop_path,
+	//         }),
+	//       });
+
+	// 	}
 
 	return (
 		<div className='tiles'>
@@ -49,12 +70,22 @@ function Tiles({ title, fetchUrl }) {
 				/>
 				<div className='tiles_images' ref={refContainer}>
 					{movies.map(movie => (
-						<div key={movie}>
-							<img
-								src={`${baseURL}${movie?.backdrop_path}`}
-								className='tiles_image'
-								alt='{movie?.title || movie?.name || movie.original_title}'
-							/>
+						<div key={movie.id} onClick={() => handleClick(movie)}>
+							<div className='favourite'>
+							
+								{/* <p>
+									<FaHeart className="heart"/>
+
+									<FaRegHeart className="Reg_heart" />
+								</p> */}
+								<img
+									src={`${baseURL}${movie?.backdrop_path}`}
+									className='tiles_image'
+									alt='{movie?.title || movie?.name || movie.original_title}'
+								/>
+
+								
+							</div>
 						</div>
 					))}
 				</div>

@@ -11,8 +11,8 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   height: 51vh;
-  font-size: 0.3rem;
-  padding-bottom: 2rem;
+  font-size: 0.9rem;
+  padding-bottom: 2.5rem;
   width: 100%;
   background-color: rgb(74, 74, 74);
   z-index: 2;
@@ -25,11 +25,20 @@
   }
 }
 .main_content {
-  padding: 10vh 4% 0 4%;
-  width: 85vh;
+  padding: 11vh 4% 0 4%;
+  width: 100%;
 }
 .main_content .main_title {
   font-size: 1.5rem;
+}
+.main_content .main_description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .main_content .main_buttons {
   display: -webkit-box;

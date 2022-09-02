@@ -11,7 +11,7 @@ import requests from "../config/Requests";
 
 function Hero() {
 
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState([true]);
 
   useEffect(() => {
     async function fetchData(){
@@ -19,7 +19,7 @@ function Hero() {
     
     setMovie(
       request.data.results[
-        Math.floor(Math.random() * request.data.results.length - 1 )
+        Math.floor(Math.random() * request.data.results.length - 2 )
       ]
     );
   }
@@ -43,7 +43,7 @@ const mainStyle ={
     <header className="main" style={mainStyle}>
         <div className="main_content">
             <h1 className="main_title">{movie?.title || movie?.name || movie.original_title}</h1>
-            <p className="main_description">{createText(movie?.overview,150)}</p>
+            <p className="main_description">{createText(movie?.overview, 150)}</p>
             <div className="main_buttons">
                 <button className="main_button main_button_play"><FontAwesomeIcon icon={faPlay}></FontAwesomeIcon> Play</button>
                 <button className="main_button"><FontAwesomeIcon icon={faCircleInfo}></FontAwesomeIcon> Info</button>

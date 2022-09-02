@@ -1,3 +1,8 @@
+body {
+	background: #141414;
+	color: #ffffff;
+}
+
 .tiles {
         padding: 3rem 5%;
         color: white;
@@ -7,6 +12,7 @@
         font-size: 1.6rem;
     }
     &_images {
+      position:relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -17,10 +23,10 @@
         .tiles_image {
             width: 310px;
             padding: 0 .2rem;
-            transition: transform 0.2s ease-in;
+            transition: transform 0.3s ease-in;
             &:hover {
                 cursor: pointer;
-                transform: scale(1.06);
+                transform: scale(1.07);
             }
         }
     }
@@ -52,8 +58,8 @@
       bottom: 0;
       margin: auto;
       cursor: pointer;
-      
-      padding: 10px;
+      align-items: center;
+      padding: 8px;
       
          
       &.left {
@@ -65,19 +71,15 @@
       }
     }
     .tiles_images {
-      margin-left: 0;
-      display: flex;
-      margin-top: 6px;
-      transform: translateX(0px);
-      transition: all 1s ease;
+      overflow-x: auto;
+      flex-wrap: nowrap;
     }
   }
 
-  .btn .heart{
-    background-color: transparent;
-    opacity: 1;
-   
-    color:white;
-    margin: 5rem 2 rem;
+  .heart{
+    top:0;
+    padding: 0px;
+    margin: 0px;
   }
+  
   

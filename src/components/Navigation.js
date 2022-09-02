@@ -1,12 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import "../components/Navigation.scss";
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import {faBell} from '@fortawesome/free-solid-svg-icons';
 import {faCircleInfo} from '@fortawesome/free-solid-svg-icons';
 import {faCaretDown} from '@fortawesome/free-solid-svg-icons';
+
+
+// import {Route} from "react-router-dom";
 
 export default function Navigation() {
 
@@ -41,13 +45,13 @@ const handleClick = () => {
         <a href="/" className ="nav_link">
         Series
         </a>
-        <a href="/" className ="nav_link">
+        <a href="/movies" className ="nav_link">
         Movies
         </a>
         <a href="/" className ="nav_link">
         New and Popular
         </a>
-        <a href="/myList" className ="nav_link">
+        <a href="./mylist" className ="nav_link">
         My list
         </a>
         </nav>

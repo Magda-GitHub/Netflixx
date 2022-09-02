@@ -1,3 +1,8 @@
+body {
+  background: #141414;
+  color: #ffffff;
+}
+
 .tiles {
   padding: 3rem 5%;
   color: white;
@@ -6,6 +11,7 @@
   font-size: 1.6rem;
 }
 .tiles_images {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,15 +29,15 @@
 .tiles_images .tiles_image {
   width: 310px;
   padding: 0 0.2rem;
-  -webkit-transition: -webkit-transform 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in;
-  transition: transform 0.2s ease-in;
-  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
 }
 .tiles_images .tiles_image:hover {
   cursor: pointer;
-  -webkit-transform: scale(1.06);
-          transform: scale(1.06);
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
 }
 .tiles ::-webkit-scrollbar {
   display: none;
@@ -58,7 +64,10 @@
   bottom: 0;
   margin: auto;
   cursor: pointer;
-  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px;
 }
 .wrapper .sliderChevron.left, .wrapper .sliderChevron.left {
   left: 0;
@@ -67,20 +76,13 @@
   right: 0;
 }
 .wrapper .tiles_images {
-  margin-left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 6px;
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  overflow-x: auto;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
-.btn .heart {
-  background-color: transparent;
-  opacity: 1;
-  color: white;
-  margin: 5rem 2 rem;
+.heart {
+  top: 0;
+  padding: 0px;
+  margin: 0px;
 }/*# sourceMappingURL=Tiles.css.map */
