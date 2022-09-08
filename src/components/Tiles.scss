@@ -77,9 +77,29 @@ body {
   }
 
   .heart{
+    
     top:0;
     padding: 0px;
-    margin: 0px;
+    z-index: 3;
+    position: absolute;
+    margin: 2% 1%;
+    color: red;
+    height: 12%;
+    width: 2%;
+    :hover{
+      cursor: cell;
+    }
+  }
+
+  .regHeart{
+    top:0;
+    padding: 0;
+    position: absolute;
+    margin: 2% 1% 5% 3%;
+    height: 12%;
+    z-index: 3;
+    width: 2%;
+    color: white;
   }
   
   
